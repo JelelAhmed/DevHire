@@ -1,0 +1,27 @@
+$color-base: #E5E5E5;
+
+
+*,
+*::before,
+*::after {
+	padding: 0;
+	margin: 0;
+	box-sizing: inherit;
+}
+
+
+ /* 10px/16px = 62.5% // Overall Font size == 1rem */
+
+html {
+	font-size: 62.5%;
+	box-sizing: border-box;
+}
+
+
+body {
+	font-family: "Open Sans", sans-serif;
+	line-height: 1.7;
+	background-color: #E5E5E5;
+	font-weight: 400;
+	
+}
