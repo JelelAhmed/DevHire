@@ -13,7 +13,7 @@ const Navigation = () => {
 			<div className="navigation">
 				<div className="navigation-container">
 					<Link className="title" to='/'>
-						<h1 className="">Dev<span className="title-alt">Hire</span></h1>
+						<div className="">Dev<span className="title-alt">Hire</span></div>
 					</Link>
 					<nav className="sidebar">
 						<ul className="nav">
