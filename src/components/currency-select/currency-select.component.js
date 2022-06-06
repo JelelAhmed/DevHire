@@ -37,7 +37,7 @@ const CurrencySelect = () => {
 						})
 					}
 					</div>
-					<select onChange={(e) => dispatch(setConversionCurrency(e.target.value))} className='select-dropdown'>
+					<select onChange={(e) => dispatch(setConversionCurrency(e.target.value, ))} className='select-dropdown'>
 						{currencies.map((currency) => {
 							return (
 								<option key={currency.id} value={currency.id}>{currency.short}</option>
@@ -46,7 +46,6 @@ const CurrencySelect = () => {
 						}
 				</select>
 				</div>
-				
 		</div>
 	);
 }

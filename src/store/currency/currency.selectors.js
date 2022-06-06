@@ -11,3 +11,13 @@ export const selectConversionId = createSelector(
 	[selectCurrency],
 	(currency) => currency.conversionId
 );
+
+export const selectConversionRate = createSelector(
+	[selectCurrency],
+	(currency) => currency.conversionRate
+);
+
+export const selectConversionSymbol = createSelector(
+	[selectCurrency],
+	(currency) => currency.conversionSymbol
+);

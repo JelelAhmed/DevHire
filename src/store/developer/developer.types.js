@@ -3,6 +3,7 @@ const developerActionTypes = {
 	GET_DEVELOPER_SUCCESS: 'GET_DEVELOPER_SUCCESS',
 	GET_DEVELOPER_FAILED: 'GET_DEVELOPER_FAILED',
 
+	ADD_FAVORITE: 'ADD_FAVORITE',
 };
 
 export default developerActionTypes;

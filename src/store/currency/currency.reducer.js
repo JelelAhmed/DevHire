@@ -5,6 +5,7 @@ const INITIAL_STATE = {
 	currencies: [],
 	conversionId: null,
 	conversionRate: null,
+	conversionSymbol: '#',
 	isPending: false,
 	onError: null
 }
@@ -43,7 +44,13 @@ const currencyReducer = (state = INITIAL_STATE, action) => {
 					...state,
 					conversionRate: action.payload
 				}
-			
+
+			case currencyActionTypes.SET_CONVERSION_SYMBOL:
+				return {
+					...state,
+					conversionSymbol: action.payload
+				}
+		
 		default: 
 			return state;
 	}

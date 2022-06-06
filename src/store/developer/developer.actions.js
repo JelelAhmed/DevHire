@@ -8,3 +8,9 @@ export const getDevelopers = () => (dispatch) => {
 		.then(data => dispatch({type: developerActionTypes.GET_DEVELOPER_SUCCESS, payload: data}))
 		.catch(error => dispatch({type: developerActionTypes.GET_DEVELOPER_FAILED, payload: error}))
 }
+
+
+export const addFavorite = (developer) => ({
+	type: developerActionTypes.ADD_FAVORITE,
+	payload: developer
+})

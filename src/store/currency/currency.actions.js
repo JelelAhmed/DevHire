@@ -18,3 +18,8 @@ export const setConversionRate = (rate) => ({
 	type: currencyActionTypes.SET_CONVERSION_RATE,
 	payload: rate
 })
+
+export const setConversionSymbol = (symbol) => ({
+	type: currencyActionTypes.SET_CONVERSION_SYMBOL,
+	payload: symbol
+})

@@ -6,17 +6,20 @@ import { selectDevs } from "../../store/developer/developer.selectors";
 import ProfileCard from "../profile-card/profile-card.component";
 import Footer from "../footer/footer.component";
 
-import './dashboard.styles.scss';
 import CurrencySelect from "../currency-select/currency-select.component";
 import { useDispatch, useSelector } from "react-redux";
-import { selectConversionId, selectCurrencies } from "../../store/currency/currency.selectors";
-import { setConversionRate } from "../../store/currency/currency.actions";
+import { selectConversionId, selectConversionRate, selectCurrencies } from "../../store/currency/currency.selectors";
+import { setConversionRate, setConversionSymbol } from "../../store/currency/currency.actions";
+
+import './dashboard.styles.scss';
+
 
 const Dashboard = () => {
 	const dispatch = useDispatch();
 	const devs = useSelector(selectDevs);
 	const currencies = useSelector(selectCurrencies);
 	const conversionId = Number(useSelector(selectConversionId));
+	const conversionRate = useSelector(selectConversionRate);
 
 
 	useEffect(() => {
@@ -28,15 +31,16 @@ const Dashboard = () => {
 	useEffect(() => {
 		let exchangeRate;
 		
-		const currencyConverter = () => {
+		const getConverterRate = () => {
 			currencies.map((currency) => {
 				if(currency.id === conversionId) {
+					dispatch(setConversionSymbol(currency.symbol));
 					return exchangeRate = currency.divider;
 				}
 			})
 			return exchangeRate;
 		}
-		currencyConverter();
+		getConverterRate();
 		dispatch(setConversionRate(exchangeRate));
 
 	}, [conversionId])
@@ -49,14 +53,14 @@ const Dashboard = () => {
 							return (
 								<ProfileCard
 									key={profile._id}
+									profile={profile}
 									services={profile._index}
 									id={profile._id}
 									name={profile._source.display_name}
 									avatar={profile._source.avatar}
 									photo={profile._source.service_photo}
-									rate={profile._source.starting_from}
+									price={profile._source.starting_from}
 									currency={profile._source.currency_name}
-
 								/>
 							);
 						})

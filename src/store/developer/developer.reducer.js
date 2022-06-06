@@ -2,6 +2,7 @@ import developerActionTypes from "./developer.types"
 
 const INITIAL_STATE = {
 	devs: null,
+	favorites: [],
 	isPending: false,
 	onError: null
 }
@@ -28,6 +29,15 @@ const developerReducer = (state = INITIAL_STATE, action) => {
 				...state,
 				onError: action.payload
 			}
+
+			case developerActionTypes.ADD_FAVORITE:
+			return {
+				...state,
+				favorites: [...state.favorites, action.payload]
+			}
+		
+			
+
 			
 		default: 
 			return state;
