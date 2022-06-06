@@ -5,7 +5,8 @@ import profile1 from '../../assets/profile/profile-6.jpg';
 import avatar1 from '../../assets/avatars/avatar-2.jpg';
 import './profile-card.styles.scss';
 
-const ProfileCard = () => {
+const ProfileCard = ({services, id, name, avatar, photo, rate, currency}) => {
+	console.log(services, id, name)
 	
 
 	return (
@@ -14,15 +15,15 @@ const ProfileCard = () => {
 				<div className="profile-backdrop">
 					<FavIcon className="profile-icon" />
 				</div>
-				<img className="profile-image" src={profile1} alt='pic' />
+				<img className="profile-image" src={photo} alt='pic' />
 			</div>
 			<div className="profile-avatar">
-				<img src={avatar1} alt='avatar' />
+				<img src={avatar} alt='avatar' />
 			</div>
 			<div className="profile-info">
 				<div className="profile-detail">
-					<span className="profile-name">Rich jack</span>
-					<span className="profile-rate">#30,000</span>
+					<span className="profile-name">{name}</span>
+					<span className="profile-rate">#{rate}</span>
 				</div>
 				<div className="profile-cta">Hire</div>
 			</div>

@@ -1,0 +1,8 @@
+const developerActionTypes = {
+	GET_DEVELOPER_PENDING: 'GET_DEVELOPER_PENDING',
+	GET_DEVELOPER_SUCCESS: 'GET_DEVELOPER_SUCCESS',
+	GET_DEVELOPER_FAILED: 'GET_DEVELOPER_FAILED',
+
+};
+
+export default developerActionTypes;
