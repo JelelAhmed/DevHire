@@ -7,21 +7,40 @@ import ProfileCard from "../profile-card/profile-card.component";
 import Footer from "../footer/footer.component";
 
 import './dashboard.styles.scss';
-import CurrencyConverter from "../currency-converter/currency-converter.component";
+import CurrencySelect from "../currency-select/currency-select.component";
 import { useDispatch, useSelector } from "react-redux";
+import { selectConversionId, selectCurrencies } from "../../store/currency/currency.selectors";
+import { setConversionRate } from "../../store/currency/currency.actions";
 
 const Dashboard = () => {
 	const dispatch = useDispatch();
 	const devs = useSelector(selectDevs);
+	const currencies = useSelector(selectCurrencies);
+	const conversionId = Number(useSelector(selectConversionId));
+
 
 	useEffect(() => {
 		dispatch(getDevelopers());
-	  console.log(devs);
-	}, [])
-
-	console.log(devs)
+	}, []);
 
 
+
+	useEffect(() => {
+		let exchangeRate;
+		
+		const currencyConverter = () => {
+			currencies.map((currency) => {
+				if(currency.id === conversionId) {
+					return exchangeRate = currency.divider;
+				}
+			})
+			return exchangeRate;
+		}
+		currencyConverter();
+		dispatch(setConversionRate(exchangeRate));
+
+	}, [conversionId])
+	
 	return (
 		<div className='dashboard'>
 			<div className="dashboard-container">
@@ -47,7 +66,7 @@ const Dashboard = () => {
 			</div>
 			<div className="dashboard-footer">
 				<Footer />
-				<CurrencyConverter />
+				<CurrencySelect />
 			</div>
 		</div>
 	)
