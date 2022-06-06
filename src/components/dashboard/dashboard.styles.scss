@@ -1,5 +1,5 @@
 .dashboard {
-	background-color: yellow;
+	background: #E5E5E5;
 	min-height: inherit;
 	width: 100%;
 	height: 100%;
@@ -8,9 +8,20 @@
 	justify-content: space-between;
 	align-items: s;
 
+
 	&-container {
 		display: grid;
-		grid-template-columns: 1fr 1fr 1fr 1fr;
+		grid-template-columns: repeat(4, 1fr);
+		grid-template-columns: repeat(auto-fit, minmax(23.8rem, 1fr));
 		grid-gap: 2rem;
+
+	}
+
+	&-footer {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin: 10rem .8rem;
+		margin-bottom: 4rem;
 	}
 }

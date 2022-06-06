@@ -1,6 +1,10 @@
 import React from "react";
 
+import ProfileCard from "../profile-card/profile-card.component";
+import Footer from "../footer/footer.component";
+
 import './dashboard.styles.scss';
+import CurrencyConverter from "../currency-converter/currency-converter.component";
 
 const Dashboard = () => {
 	
@@ -8,12 +12,23 @@ const Dashboard = () => {
 	return (
 		<div className='dashboard'>
 			<div className="dashboard-container">
-				<div>Info-card</div>
-				<div>Info-card</div>
-				<div>Info-card</div>
-				<div>Info-card</div>
+				<ProfileCard />
+				<ProfileCard />
+				<ProfileCard />
+				<ProfileCard />
+				<ProfileCard />
+				<ProfileCard />
+				<ProfileCard />
+				<ProfileCard />
+				<ProfileCard />
+				<ProfileCard />
+				<ProfileCard />
+				<ProfileCard />
 			</div>
-			<footer className="dashboard-footer">Footer</footer>
+			<div className="dashboard-footer">
+				<Footer />
+				<CurrencyConverter />
+			</div>
 		</div>
 	)
 };
