@@ -1,19 +1,31 @@
+$bp-small: 37.5em;  //// == 600px
+$bp-smaller: 31.25em; // == 500px;
+$bp-medium: 50em; //// == 800px
+
+
 .layout {
 	width: 100%;
 	min-height: inherit;
 	background: #E5E5E5;
 	flex: 1;
 	color: #14142B;
-	background-color: green;
 	display: flex;
 
 	&-container {
    	min-height: 80%;
 		margin: 11.4rem 8.3rem 4rem 4.5rem;
+
 		display: flex;
 		flex-direction: column;
-		background-color: red;
 		width: 100%;
+
+		@media only screen and(max-width: $bp-small) {
+			margin: 10rem 6rem 3rem 1.5rem;
+		}
+
+		@media only screen and(max-width: $bp-smaller) {
+			margin: 7rem 4rem 2rem 2.2rem;
+		}
 	}
 
 	&-heading {

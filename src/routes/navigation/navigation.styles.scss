@@ -1,9 +1,11 @@
+
+
 .navigation {
 	min-height: 100%;
-	background-color: white;
+	// background-color: white;
 	flex: 0 0 20.83%;
 	color: white;
-  border: .1rem solid #D9DBE9;
+  border: .3rem solid #D9DBE9;
 
 	&-container {
 		margin-left: 5rem;
@@ -90,7 +92,6 @@
 			text-decoration-color: #1D9BF0;
 			text-decoration-thickness: .3rem;
 			color: #14142B;
-			fill: #ffffff;
 		}
 	}
 
@@ -102,7 +103,13 @@
 		justify-content: center;
 		margin-right: 2rem;
 
-		&-active {
+		&:hover {
+			width: 3rem;
+			height: 3rem;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin-right: 2rem;
 			background: #1D9BF0;
 			border-radius: .7rem;
 		}

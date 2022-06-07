@@ -1,20 +1,18 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { ReactComponent as FavIcon } from '../../assets/favorite.svg'
 import { selectConversionRate, selectConversionSymbol } from "../../store/currency/currency.selectors";
 import { toggleFavorite } from "../../store/developer/developer.actions";
-import { selectFavorite } from "../../store/developer/developer.selectors";
 
 import './profile-card.styles.scss';
 
-const ProfileCard = ({services, id, name, avatar, photo, price, currency, profile}) => {
+const ProfileCard = ({name, avatar, photo, price, profile}) => {
 
+	console.log(price, 'profile')
 	const dispatch = useDispatch();
 	const conversionRate = useSelector(selectConversionRate);
 	const conversionSymbol = useSelector(selectConversionSymbol);
-	const favorites = useSelector(selectFavorite);
-
 
 	
 	const handleClick = () => {
@@ -31,7 +29,7 @@ const ProfileCard = ({services, id, name, avatar, photo, price, currency, profil
 	return (
 		<div className='profile'>
 			<div className="profile-background">	
-				<div onClick={handleClick} className="profile-backdrop">
+				<div onClick={handleClick} className={'profile-backdrop'}>
 					<FavIcon className='profile-icon'/>
 				</div>	
 				<img className="profile-image" src={photo} alt='pic' />

@@ -1,24 +1,29 @@
 import React, { useEffect } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { selectFavorite } from '../../store/developer/developer.selectors';
-
+import { setConversionRate } from '../../store/currency/currency.actions';
 import ProfileCard from '../../components/profile-card/profile-card.component';
 import Dashboard from '../../components/dashboard/dashboard.component';
 import './favorite-lists.styles.scss';
+import { selectConversionId, selectConversionRate, selectConversionSymbol, selectCurrencies } from '../../store/currency/currency.selectors';
 
 
 const  FavoriteList = () => {
+	const dispatch = useDispatch();
+	const currencies = useSelector(selectCurrencies)
+	const conversionId = useSelector(selectConversionId);
+	const setConversionSymbol = useSelector(selectConversionSymbol)
+	const conversionRate = useSelector(selectConversionRate);
+
 	const favorites = useSelector(selectFavorite);
 
-	useEffect(() => {
-
-	},[favorites])
 
 	return (
 		<Dashboard>
-			{favorites ? (
+			{favorites.length ? (
 				favorites.map((profile) => {
+					console.log(profile._source.starting_from)
 							return (
 								<ProfileCard
 									key={profile._id}
@@ -34,7 +39,7 @@ const  FavoriteList = () => {
 							);
 						})
 				)
-				: <div className="developers">No Favorites to Display</div> 
+				: <div className="favorites">No Favorites to Display</div> 
 			}
 		</Dashboard>
 	);

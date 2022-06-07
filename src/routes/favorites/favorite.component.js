@@ -8,7 +8,7 @@ import PageLayout from '../../components/page-layout/page-layout.component';
 const  Favorites = () => {
 	return (
 
-		<PageLayout title='Hire Top Developers'>
+		<PageLayout title='Favorites'>
 			<FavoriteList />
 		</PageLayout>
 	);

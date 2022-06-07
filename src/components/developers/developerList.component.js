@@ -3,8 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { selectConversionId, selectConversionRate, selectCurrencies } from "../../store/currency/currency.selectors";
 import { setConversionRate, setConversionSymbol } from "../../store/currency/currency.actions";
-import { getDevelopers } from "../../store/developer/developer.actions";
-import { selectActiveFavorite, selectDevs } from "../../store/developer/developer.selectors";
+import { getDevelopers, toggleActive } from "../../store/developer/developer.actions";
+import { selectActive, selectActiveFavorite, selectDevs } from "../../store/developer/developer.selectors";
 
 import ProfileCard from "../profile-card/profile-card.component";
 import Dashboard from "../dashboard/dashboard.component";
@@ -19,7 +19,8 @@ const Developers = () => {
 	const devs = useSelector(selectDevs);
 	const currencies = useSelector(selectCurrencies);
 	const conversionId = Number(useSelector(selectConversionId));
-	const conversionRate = useSelector(selectConversionRate);
+	const active = useSelector(selectActive);
+
 
 
 	useEffect(() => {
@@ -40,9 +41,9 @@ const Developers = () => {
 			return exchangeRate;
 		}
 		getConverterRate();
-		dispatch(setConversionRate(exchangeRate));
+		dispatch(setConversionRate(getConverterRate()));
 
-	}, [conversionId])
+	},[conversionId])
 	
 
 	return (

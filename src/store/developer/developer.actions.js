@@ -14,3 +14,8 @@ export const toggleFavorite = (developer) => ({
 	type: developerActionTypes.TOGGLE_FAVORITE,
 	payload: developer
 })
+
+export const toggleActive = (boolean) => ({
+	type: developerActionTypes.TOGGLE_ACTIVE_FAVORITE,
+	payload: boolean
+})

@@ -3,8 +3,8 @@ import currencyActionTypes from "../currency/currency.types"
 
 const INITIAL_STATE = {
 	currencies: [],
-	conversionId: null,
-	conversionRate: null,
+	conversionId: 1,
+	conversionRate: 1,
 	conversionSymbol: '#',
 	isPending: false,
 	onError: null
