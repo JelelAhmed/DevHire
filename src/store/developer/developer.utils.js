@@ -7,5 +7,5 @@ export const toggleFavoriteDevs = (favorites, devToAdd) => {
 	  return favorites.filter(favorite => favorite._id !== devToAdd._id)
 	} 
 
-	return [...favorites, devToAdd]
+	return [...favorites, { ...devToAdd, active: true }];
 }

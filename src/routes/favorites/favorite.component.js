@@ -1,12 +1,16 @@
 import React from 'react';
-import './favorite.styles.scss';
+
+import FavoriteList from '../../components/favorite-lists/favorite-lists.component';
+import PageLayout from '../../components/page-layout/page-layout.component';
+
 
 
 const  Favorites = () => {
 	return (
-		<div className="favorites">
-			Favorites
-		</div>
+
+		<PageLayout title='Hire Top Developers'>
+			<FavoriteList />
+		</PageLayout>
 	);
 }
 

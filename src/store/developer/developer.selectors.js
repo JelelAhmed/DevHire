@@ -11,3 +11,8 @@ export const selectFavorite = createSelector(
 	[selectDeveloper],
 	(developer) => developer.favorites
 );
+
+export const selectActiveFavorite = createSelector(
+	[selectDeveloper],
+	(developer) => developer.favorites.active
+);
