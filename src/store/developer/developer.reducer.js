@@ -1,4 +1,5 @@
 import developerActionTypes from "./developer.types"
+import { addDevToFavorites } from "./developer.utils"
 
 const INITIAL_STATE = {
 	devs: null,
@@ -33,7 +34,7 @@ const developerReducer = (state = INITIAL_STATE, action) => {
 			case developerActionTypes.ADD_FAVORITE:
 			return {
 				...state,
-				favorites: [...state.favorites, action.payload]
+				favorites: addDevToFavorites(state.favorites, action.payload)
 			}
 		
 			
