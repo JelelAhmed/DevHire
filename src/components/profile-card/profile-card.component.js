@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { ReactComponent as FavIcon } from '../../assets/favorite.svg'
 import { selectConversionRate, selectConversionSymbol } from "../../store/currency/currency.selectors";
-import { addFavorite } from "../../store/developer/developer.actions";
+import { toggleFavorite } from "../../store/developer/developer.actions";
 import { selectFavorite } from "../../store/developer/developer.selectors";
 
 import './profile-card.styles.scss';
@@ -18,7 +18,7 @@ const ProfileCard = ({services, id, name, avatar, photo, price, currency, profil
 
 	
 	const handleClick = () => {
-		dispatch(addFavorite(profile))
+		dispatch(toggleFavorite(profile))
 	}
 	
 

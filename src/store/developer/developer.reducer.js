@@ -1,5 +1,5 @@
 import developerActionTypes from "./developer.types"
-import { addDevToFavorites } from "./developer.utils"
+import { toggleFavoriteDevs } from "./developer.utils"
 
 const INITIAL_STATE = {
 	devs: null,
@@ -31,10 +31,10 @@ const developerReducer = (state = INITIAL_STATE, action) => {
 				onError: action.payload
 			}
 
-			case developerActionTypes.ADD_FAVORITE:
+			case developerActionTypes.TOGGLE_FAVORITE:
 			return {
 				...state,
-				favorites: addDevToFavorites(state.favorites, action.payload)
+				favorites: toggleFavoriteDevs(state.favorites, action.payload)
 			}
 		
 			

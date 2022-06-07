@@ -10,7 +10,7 @@ export const getDevelopers = () => (dispatch) => {
 }
 
 
-export const addFavorite = (developer) => ({
-	type: developerActionTypes.ADD_FAVORITE,
+export const toggleFavorite = (developer) => ({
+	type: developerActionTypes.TOGGLE_FAVORITE,
 	payload: developer
 })
